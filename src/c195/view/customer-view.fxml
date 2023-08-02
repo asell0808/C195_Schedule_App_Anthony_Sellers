@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="532.0" prefWidth="671.0" spacing="10.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c195.controller.CustomerViewController">
+   <children>
+      <Label fx:id="titleLabel" text="Customer">
+         <font>
+            <Font size="30.0" />
+         </font>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets bottom="10.0" />
+         </padding>
+      </Label>
+      <VBox prefHeight="50.0" prefWidth="274.0">
+         <children>
+            <Label text="ID" textFill="#00000091" />
+            <TextField fx:id="customerIdField" disable="true" editable="false" minHeight="32.0" prefHeight="32.0" prefWidth="235.0" promptText="Auto Generated ID" />
+         </children>
+      </VBox>
+      <VBox>
+         <children>
+            <Label text="Name" textFill="#00000091" />
+            <TextField fx:id="customerNameField" minHeight="32.0" prefHeight="32.0" promptText="Name" />
+         </children>
+      </VBox>
+      <VBox>
+         <children>
+            <Label text="Address" textFill="#00000091" />
+            <TextField fx:id="customerAddressField" minHeight="32.0" prefHeight="32.0" promptText="Address" />
+         </children>
+      </VBox>
+      <HBox alignment="CENTER" minHeight="32.0" prefHeight="32.0" prefWidth="288.0" spacing="10.0">
+         <children>
+            <VBox HBox.hgrow="ALWAYS">
+               <children>
+                  <Label text="Country" textFill="#00000091" />
+                  <AnchorPane prefHeight="32.0" prefWidth="200.0">
+                     <children>
+                        <ComboBox fx:id="customerCountry" prefHeight="32.0" prefWidth="150.0" promptText="Country" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+            <VBox HBox.hgrow="ALWAYS">
+               <children>
+                  <Label text="State / Province" textFill="#00000091" />
+                  <AnchorPane prefHeight="32.0" prefWidth="200.0">
+                     <children>
+                        <ComboBox fx:id="customerStateProvince" layoutX="8.0" layoutY="1.0" prefHeight="32.0" prefWidth="150.0" promptText="State / Province" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+         </children>
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="40.0" layoutY="256.0" prefHeight="27.0" prefWidth="288.0" spacing="10.0">
+         <children>
+            <VBox HBox.hgrow="ALWAYS">
+               <children>
+                  <Label text="Postal Code" textFill="#00000091" />
+                  <TextField fx:id="customerPostalCode" minHeight="32.0" prefHeight="32.0" promptText="Postal Code" />
+               </children>
+            </VBox>
+            <VBox HBox.hgrow="ALWAYS">
+               <children>
+                  <Label text="Phone Number" textFill="#00000091" />
+                  <TextField fx:id="customerPhoneNumber" minHeight="32.0" prefHeight="32.0" promptText="Phone Number" />
+               </children>
+            </VBox>
+         </children>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="40.0" layoutY="305.0" prefHeight="27.0" prefWidth="288.0" spacing="10.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#saveCustomer" prefHeight="31.0" prefWidth="108.0" text="Save">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button layoutX="131.0" layoutY="11.0" mnemonicParsing="false" onAction="#cancelAction" prefHeight="42.0" prefWidth="113.0" text="Cancel">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+         </children>
+         <VBox.margin>
+            <Insets top="15.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+   </padding>
+</VBox>

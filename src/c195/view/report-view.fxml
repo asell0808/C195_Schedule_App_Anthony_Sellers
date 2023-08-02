@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="869.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c195.controller.ReportViewController">
+    <children>
+        <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
+            <children>
+                <HBox alignment="CENTER" prefHeight="60.0" prefWidth="600.0">
+                    <children>
+                        <Label text="Appointment Reports" HBox.hgrow="ALWAYS">
+                            <font>
+                                <Font size="26.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+                <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+                    <tabs>
+                        <Tab text="Appointment Type Count">
+                            <content>
+                                <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                        <HBox alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="600.0" spacing="10.0">
+                                            <children>
+                                                <ComboBox fx:id="typeSectionMonthCombo" minHeight="32.0" prefWidth="150.0" promptText="Month" />
+                                                <ComboBox fx:id="typeSectionTypeCombo" layoutX="15.0" layoutY="15.0" minHeight="32.0" prefWidth="150.0" promptText="Type" />
+                                    <Button mnemonicParsing="false" onAction="#typeSectionGenerate" prefHeight="32.0" prefWidth="114.0" text="Generate" />
+                                    <Button layoutX="335.0" layoutY="15.0" mnemonicParsing="false" onAction="#typeClear" prefHeight="32.0" prefWidth="103.0" text="Clear" />
+                                    <Label fx:id="typeCountLoadingLabel">
+                                       <padding>
+                                          <Insets left="20.0" />
+                                       </padding>
+                                    </Label>
+                                            </children>
+                                            <padding>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                            </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                                        </HBox>
+                                        <TableView fx:id="typesTbl" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                                            <columns>
+                                                <TableColumn fx:id="typeSectionMonthCol" prefWidth="75.0" text="Month" />
+                                                <TableColumn fx:id="typeSectionTypeCol" prefWidth="75.0" text="Type" />
+                                                <TableColumn fx:id="typeSectionCountCol" prefWidth="75.0" text="Count" />
+                                            </columns>
+                                        </TableView>
+                                    </children>
+                                </VBox>
+                            </content>
+                        </Tab>
+                        <Tab text="Appointments By Contact">
+                            <content>
+                                <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="200.0" spacing="10.0">
+                                 <children>
+                                    <ComboBox fx:id="apptContactCombo" minHeight="32.0" prefWidth="150.0" promptText="Contact" />
+                                    <Button minHeight="32.0" mnemonicParsing="false" onAction="#contactApptClear" text="Clear" />
+                                    <Label fx:id="contactLoadingLabel">
+                                       <padding>
+                                          <Insets left="20.0" />
+                                       </padding>
+                                    </Label>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </HBox>
+                                        <TableView fx:id="apptTbl" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                                            <columns>
+                                                <TableColumn fx:id="apptIdCol" prefWidth="75.0" text="ID" />
+                                                <TableColumn fx:id="apptTitleCol" prefWidth="75.0" text="Title" />
+                                                <TableColumn fx:id="apptDescCol" prefWidth="75.0" text="Description" />
+                                                <TableColumn fx:id="apptLocationCol" prefWidth="75.0" text="Location" />
+                                                <TableColumn fx:id="apptContactCol" prefWidth="75.0" text="Contact ID" />
+                                                <TableColumn fx:id="apptTypeCol" prefWidth="75.0" text="Type" />
+                                                <TableColumn fx:id="apptStartCol" prefWidth="75.0" text="Start" />
+                                                <TableColumn fx:id="apptEndCol" prefWidth="75.0" text="End" />
+                                                <TableColumn fx:id="apptCustomerIdCol" prefWidth="75.0" text="Customer ID" />
+                                                <TableColumn fx:id="apptUserIdCol" prefWidth="75.0" text="User ID" />
+                                            </columns>
+                                            <columnResizePolicy>
+                                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                            </columnResizePolicy>
+                                        </TableView>
+                                    </children>
+                                </VBox>
+                            </content>
+                        </Tab>
+                        <Tab text="Appointment Description Count">
+                            <content>
+                                <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                        <HBox alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="600.0" spacing="10.0">
+                                            <children>
+                                                <ComboBox fx:id="descriptionSectionMonthCombo" minHeight="32.0" prefWidth="150.0" promptText="Month" />
+                                                <ComboBox fx:id="descriptionSectionCombo" layoutX="15.0" layoutY="15.0" minHeight="32.0" prefWidth="150.0" promptText="Description" />
+                                                <Button mnemonicParsing="false" onAction="#descriptionSectionGenerate" prefHeight="32.0" text="Generate" />
+                                                <Button layoutX="335.0" layoutY="15.0" mnemonicParsing="false" onAction="#descriptionClear" prefHeight="32.0" text="Clear" />
+                                    <Label fx:id="descriptionLoadingLabel">
+                                       <padding>
+                                          <Insets left="20.0" />
+                                       </padding>
+                                    </Label>
+                                            </children>
+                                            <padding>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                            </padding>
+                                            <VBox.margin>
+                                                <Insets />
+                                            </VBox.margin>
+                                        </HBox>
+                                        <TableView fx:id="descriptionTbl" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                                            <columns>
+                                                <TableColumn fx:id="descriptionSectionMonthCol" prefWidth="75.0" text="Month" />
+                                                <TableColumn fx:id="descriptionSectionCol" prefWidth="75.0" text="Description" />
+                                                <TableColumn fx:id="descriptionSectionCountCol" prefWidth="75.0" text="Count" />
+                                            </columns>
+                                        </TableView>
+                                    </children>
+                                </VBox>
+                            </content>
+                        </Tab>
+                    </tabs>
+                </TabPane>
+            </children>
+        </VBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="55.0" prefWidth="869.0">
+         <children>
+            <Button minHeight="32.0" mnemonicParsing="false" onAction="#backBtn" prefHeight="46.0" prefWidth="101.0" text="Back" />
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets left="15.0" right="15.0" />
+         </padding>
+      </HBox>
+    </children>
+</VBox>
